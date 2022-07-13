@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+$color: white;
+$color-dark: #a53125;
+$speed: "0.25s";
+$transition: all #{$speed} cubic-bezier(0.310, -0.105, 0.430, 1.400);
+$landing-btn-bg: #6225E6;
+$btn-transform: translate(-50%, -50%);
+$btn-color: #313dfc;
+
+.bgimg {
+    background-image: url('/assets/public/images/bg.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    animation: opac 0.8s;
+    color: $color;
+    font-family: 'Poppins', sans-serif;
+
+    .display-middle {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: $btn-transform;
+        -ms-transform: $btn-transform;
+    }
+
+
+    .button {
+        display: inline-block;
+        padding: .75rem 1.25rem;
+        border-radius: 1rem;
+        color: $color;
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: .15rem;
+        transition: all .3s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        text-decoration: none;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $btn-color;
+            border-radius: 1rem;
+            z-index: -2;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: darken($color, 15%);
+            transition: all .3s;
+            border-radius: 1rem;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: $btn-color;
+
+            &:before {
+                width: 100%;
+            }
+        }
+    }
+
+
+
+}
