@@ -9,9 +9,8 @@ import { MENU_LIST } from '../../constants/menuList.constant';
 })
 export class HeaderComponent implements OnInit {
   menuList: MENULIST[] = MENU_LIST;
-  activeIndex: number = 0;
+  activeIndex: number = 1;
   constructor() { 
-    console.log(this.menuList)
   }
 
   ngOnInit(): void {
